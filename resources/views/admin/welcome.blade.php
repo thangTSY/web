@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Auth Laravel 8 </title>
+    <title> </title>
 </head>
 <body>
   
