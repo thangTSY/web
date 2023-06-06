@@ -12,11 +12,6 @@ class AdminAuthController extends Controller
         return view('admin.login');
     }
 
-    public function index2()
-    {
-        return view('admin.index ');
-    }
-
     public function customLogin(Request $request)
     {
         $this->validate($request, [
@@ -30,13 +25,12 @@ class AdminAuthController extends Controller
             $user = auth()->guard('admin')->user();
 
             if($user->is_admin == 1){
-                return redirect()->route('admin.index2')->with('success','You are Logged in sucessfully.');
+                return redirect()->route('admin_home')->with('success','Đăng nhập thành công.');
             }
         }
         else {
-            return back()->with('error','Whoops! invalid email and password.');
+            return back()->with('error','Sai email hoặc password .');
         }
-        
     }
 
     public function dashboard()
